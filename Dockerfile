@@ -13,8 +13,9 @@ COPY . /var/www/html/
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
-# Configure Apache Directory permissions & uploads directory
-RUN chown -R www-data:www-data /var/www/html/
-RUN chmod -R 755 /var/www/html/uploads
+# Ensure uploads directory structure exists & set permissions
+RUN mkdir -p /var/www/html/uploads/profiles \
+ && chown -R www-data:www-data /var/www/html/ \
+ && chmod -R 755 /var/www/html/uploads
 
 EXPOSE 80
