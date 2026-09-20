@@ -1,5 +1,4 @@
-# Disable execution of scripts in uploads directory
+# Disable execution of scripts in uploads directory (Apache 2.4 Syntax)
 <FilesMatch "\.(php|phtml|php3|php4|php5|phps|cgi|pl|exe)$">
-    Order allow,deny
-    Deny from all
+    Require all denied
 </FilesMatch>

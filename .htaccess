@@ -1,11 +1,10 @@
 # ============================================================
-# ConnectMe Apache Configuration & Security Header Rules
+# ConnectMe Apache 2.4 Configuration & Security Header Rules
 # ============================================================
 
-# Protect Sensitive Configuration Files & Database Dumps
+# Protect Sensitive Configuration Files & Database Dumps (Apache 2.4 Syntax)
 <FilesMatch "^(config\.php|config\.example\.php|database\.sql|\.env|\.git)">
-    Order allow,deny
-    Deny from all
+    Require all denied
 </FilesMatch>
 
 # Disable Directory Listings
