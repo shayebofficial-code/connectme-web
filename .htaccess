@@ -19,13 +19,5 @@ Options -Indexes
     Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
-# Disable Execution of PHP Scripts in Uploads Directory
-<Directory "uploads">
-    <FilesMatch "\.(php|phtml|php3|php4|php5|phps|cgi|pl|exe)$">
-        Order allow,deny
-        Deny from all
-    </FilesMatch>
-</Directory>
-
 # UTF-8 Encoding Standard
 AddDefaultCharset UTF-8
